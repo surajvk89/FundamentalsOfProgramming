@@ -1,4 +1,0 @@
-HI
-This is sample text file
-
-We are learning file handling using Java.
