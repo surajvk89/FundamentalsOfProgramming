@@ -16,34 +16,34 @@ class BubbleSort{
         }
     }
 
-    void bubbleSort(){
-        System.out.println("Array before sorting : ");
-        for(int i=0;i<size;i++)
-            System.out.print(" " + arr[i]);
-        boolean swap;
-        int swapCount=0;
-        do{
-            swap=false;
-            for(int inner=0;inner<size-1;inner++){
-                if(arr[inner]>arr[inner+1]){        //(arr[inner]<arr[inner+1])
-                    int temp = arr[inner];
-                    arr[inner] = arr[inner+1];
-                    arr[inner+1] = temp;
-                    swap = true;
-                    swapCount++;
-                }
-            }
-            System.out.println("");
-            for(int i=0;i<size;i++)
-                System.out.print(" " + arr[i]);
-            }while(swap);
-
-        System.out.println("\n Count : " + swapCount);
-
-        System.out.println("\n Array after sorting : ");
-        for(int i=0;i<size;i++)
-            System.out.print(" " + arr[i]);
-    }
+//    void bubbleSort(){
+//        System.out.println("Array before sorting : ");
+//        for(int i=0;i<size;i++)
+//            System.out.print(" " + arr[i]);
+//        boolean swap;
+//        int swapCount=0;
+//        do{
+//            swap=false;
+//            for(int inner=0;inner<size-1;inner++){
+//                if(arr[inner]>arr[inner+1]){        //(arr[inner]<arr[inner+1])
+//                    int temp = arr[inner];
+//                    arr[inner] = arr[inner+1];
+//                    arr[inner+1] = temp;
+//                    swap = true;
+//                    swapCount++;
+//                }
+//            }
+//            System.out.println("");
+//            for(int i=0;i<size;i++)
+//                System.out.print(" " + arr[i]);
+//            }while(swap);
+//
+//        System.out.println("\n Count : " + swapCount);
+//
+//        System.out.println("\n Array after sorting : ");
+//        for(int i=0;i<size;i++)
+//            System.out.print(" " + arr[i]);
+//    }
 
     void bubbleSort(){
         System.out.println("Array before sorting : ");
