@@ -1,7 +1,6 @@
 
 
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 
 public class ExamplesDP {
     //Given array arr[], minimum(max+min) for subarray
@@ -327,6 +326,112 @@ public class ExamplesDP {
     }
 
 
+    //traverse list in reverse order
+    //convert arrayList in linkedList
+    //Search element in list and display index if element is in list
+    //chocolate division
+    //exception handling for file
+    //inheritance - variable, overriding method, overloaded method
+
+
+//    linkedlist = [1,2,3,4,5,6,7,8] - > 8,7,6,5,4,3,2,1
+//    iterator
+
+    static void traverList(int arr[]){
+        //List<Integer> ll = new LinkedList<>();
+        List<Integer> ll = Arrays.asList(1,2,3,4);
+        ListIterator<Integer> li = ll.listIterator(ll.size());
+        while(li.hasPrevious()){
+            System.out.println(li.previous());
+        }
+
+//        li = ll.listIterator(); // memory where first element starts
+    }
+
+static void arrayToList(int arr[]){
+        List<Integer> ll = new ArrayList<>();
+        for(int ele:arr){
+            ll.add(ele);
+        }
+        System.out.println("List is : " + ll);
+}
+
+static void searchInList(){
+    List<Integer> ll = Arrays.asList(1,2,3,4,5,6,7,8,9);
+    int ele=10;
+    //linear search
+    ListIterator<Integer> li = ll.listIterator();
+    while(li.hasNext()){
+        if(li.next()==ele)
+        {
+            System.out.println("Element Found at Index " + ll.indexOf(ele));
+            break;
+        }
+    }
+
+    if(ll.contains(ele)){
+        System.out.println("Element Found at Index " + ll.indexOf(ele));
+    }else{
+        System.out.println("Element Not Found");
+    }
+}
+
+//    {5,3,7,10,12} = chocolate with pieces - sweetness
+//    k friend
+//            k = 2
+//    3
+//    5,3,7 = 15
+//    10
+//    12
+
+//    10
+//    5
+//    5,3 = 8
+//    5,3,7 = 15 - p1
+//    10 - p2
+//    12 -  p3
+//    12 = 12
+//
+//    count = k+1
+//    --
+//    count ==0
+//
+//
+//    count = 0
+//    ++
+//    count == k+1
+
+
+
+    static boolean possibleDiv(int arr[],int minSweet,int count){
+        int currSweet=0;
+        for(int i=0;i<arr.length;i++){
+            currSweet+=arr[i];
+            if(currSweet>=minSweet){
+                count--;
+                currSweet=0;
+            }
+        }
+        return (count<=0);
+    }
+    static void minSweet(){
+        int arr[] = {5,2,4,8,6,10,9,13,15};
+        int k = 3;
+
+        int totalSweetness=0;
+
+        for(int i:arr){
+            totalSweetness+=i;
+        }
+        int minSweet,ans=0;
+        //totalSweetness * N
+        for(minSweet=1;minSweet<=totalSweetness;minSweet++){
+            if(possibleDiv(arr,minSweet,k+1)){
+                ans=minSweet;
+            }
+        }
+    System.out.println("Minimum sweetness that you will get is : "+ ans);
+    }
 
 
     public static void main(String[] args) {
@@ -350,8 +455,16 @@ public class ExamplesDP {
 //        int x=30;
 //        System.out.println(" Square root of " + x + " is : " + sqrtN(x));
 
-        appendArraylist();
+//        appendArraylist();
+
+//        traverList(arr);
+//        arrayToList(arr);
+//        searchInList();
+
+        minSweet();
+
     }
+
 }
 
 
